@@ -1,0 +1,22 @@
+Problem: ConcurrentModificationException occurs when we change or modify the list while traversing a list with Iterator function.
+So probably, he/she is trying to modify the arraylist after creation of Iterator.
+
+To fix it: Create new iterator object after modification
+
+// So create the error:
+
+Iterator<String> lir = al.iterator(); // Iterator created
+while (lir.hasNext()) 
+    System.out.println(lir.next());
+al.add(2, "inserted"); // List is modified here
+while (lir.hasNext()) 
+    System.out.println(lir.next());// Again it try to access list 
+
+//And to resolove it:
+//we will do something like this:
+al.add(2, "inserted");
+lir = al.iterator();
+while (lir.hasNext()) 
+    System.out.println(lir.next());
+
+
