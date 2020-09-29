@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BobbleAI</string>
+    <string name="display_btn_name">Display</string>
+    <string name="menu_delete">Delete All</string>
 </resources>
